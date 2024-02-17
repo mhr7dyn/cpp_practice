@@ -1,0 +1,18 @@
+Welcome to your first C++ lab!
+In this program, let's pretend you want to buy C++ learning materials.
+After fixing the codes below, compare this program output with the sample output to verify your work.
+
+Please enter the amount of money you have: You have 500 HKD.
+
+You decide to buy the textbook for 100 HKD.
+Remaining balance: 400 HKD.
+
+You decide to buy a notebook for 20 HKD.
+Remaining balance: 380 HKD.
+
+Because you need money, you would like to sell your pencil.
+Please enter the price for your pencil: Remaining balance: 415 HKD.
+
+Lastly, you try to buy a new laptop for 2000 HKD.
+You don't have enough money left.
+Remaining balance: 415 HKD.
