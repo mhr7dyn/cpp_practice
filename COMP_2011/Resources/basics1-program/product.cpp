@@ -14,7 +14,7 @@ int main()              // Program's entry point
     cout << "Enter the second integer: ";    // Asking for inputs
     cin >> y;                                // Input statement
     product = x * y;                         // Computations
-    cout << "product = " << product << endl; // Output statements
+    cout << "product = " << product; // Output statements
     
     return 0;           // Program ends; feedback to the shell
 }

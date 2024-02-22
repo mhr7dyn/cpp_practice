@@ -13,7 +13,7 @@ int main()
     while (x > 0.1)
     {
         cout << "Halving " << count++ << " time(s); "
-             << "x = " << x << endl;
+             << "x = " << x << "\n7";
         x /= HALF;
     }
 

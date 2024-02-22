@@ -5,7 +5,8 @@ int main()
 {
     bool x = true;
     bool y = false;
-    
+    char
+    /*
     // Default output format of booleans
     cout << x << " && " << y << " = " << (x && y) << endl << endl;
 
@@ -14,6 +15,8 @@ int main()
 
     cout << noboolalpha; // To print booleans in 1 or 0
     cout << x << " && " << y << " = " << (x && y) << endl;
+    */
+    cout << boolalpha << ;
 
     return 0;
 }

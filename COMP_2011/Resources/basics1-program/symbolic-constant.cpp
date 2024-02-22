@@ -10,6 +10,7 @@ int main()
     const float STUDENT_2_ROOM_RATIO = 100.0;
     
     cout << "COMP2011 requires "
+         << COMP2011_QUOTA/STUDENT_2_PROF_RATIO
          << ceil(COMP2011_QUOTA/STUDENT_2_PROF_RATIO) 
          << " instructors, "
          << ceil(COMP2011_QUOTA/STUDENT_2_TA_RATIO) 

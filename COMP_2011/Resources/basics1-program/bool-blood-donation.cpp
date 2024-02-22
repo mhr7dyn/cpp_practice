@@ -12,6 +12,7 @@ int main()
     cin >> recipient_blood_type;
     
     exact_match = (donor_blood_type == recipient_blood_type);
+    
     match_all = (donor_blood_type == 'O');
     
     if (exact_match || match_all)
