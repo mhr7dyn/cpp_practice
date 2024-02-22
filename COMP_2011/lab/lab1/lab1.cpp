@@ -14,7 +14,7 @@ int main() {
 
 
     // TODO 1: Fix the line below. It currently will print "You have500HKD." if your input was 500.
-    cout << "You have" << balance << "HKD." << endl;
+    cout << "You have " << balance << " HKD." << endl;
 
 
     cout << endl;
@@ -22,7 +22,7 @@ int main() {
 
 
     // TODO 2: Fix the line below. It currently does not subtract balance by 100 correctly.
-    balance - 100;
+    balance -= 100;
 
 
     cout << "Remaining balance: " << balance << " HKD." << endl;
@@ -32,8 +32,8 @@ int main() {
     // TODO 3: Fix the three lines below. They are not in the correct order.
     // Hint: Use Alt+Up/Down to move the current line(s) up or down.
     cout << "You decide to buy a notebook for 20 HKD." << endl;
-    cout << "Remaining balance: " << balance << " HKD." << endl;
     balance = balance - 20;
+    cout << "Remaining balance: " << balance << " HKD." << endl;    
 
 
     cout << endl;
@@ -46,8 +46,8 @@ int main() {
     // TODO 4: Fix the if statement below.
     // If the pencil's price is higher than 50, the selling fails.
     // Hint: To edit the same word in multiple places, select the word and use Ctrl+D / Cmd+D.
-    if (balance <= 50)
-        cout << "The price " << balance << " is too high, you could not sell your pencil." << endl;
+    if (price > 50)
+        cout << "The price " << price << " is too high, you could not sell your pencil." << endl;
     else
         balance = balance + price;
 
@@ -65,8 +65,8 @@ int main() {
     if (balance < 2000)
         cout << "You don't have enough money left." << endl;
     else
-        cout << "You have enough money left, you can purchase the laptop." << endl;
-        balance = balance - 2000;
+        {cout << "You have enough money left, you can purchase the laptop." << endl;
+        balance = balance - 2000;}
 
 
     cout << "Remaining balance: " << balance << " HKD." << endl;
