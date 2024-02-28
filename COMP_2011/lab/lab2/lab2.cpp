@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
@@ -13,7 +14,30 @@ int main()
     /////////////////////////////////////////////////
     // TODO: Complete the code below
     // Your Code Here
+    bool perfect_square = false;
 
+    do {
+    cout << "Please enter an integer number: ";
+    int number; cin >> number;
+    cout << number << endl;
+    int root = sqrt(number);
+    if (number < 0){
+        cout << "The input number is invalid." << endl;
+    }
+    
+    else
+        if (root*root == number){
+            perfect_square = true;
+            cout << "The input number is a perfect square. Its non-negative integer square root is " << root << "." << endl;
+            cout << "The program ends.";}
+        else
+            cout << "The input number is not a perfect square." << endl;
+            cout << endl;
+
+
+
+    }
+    while (perfect_square != true);
 
 
     /////////////////////////////////////////////////
