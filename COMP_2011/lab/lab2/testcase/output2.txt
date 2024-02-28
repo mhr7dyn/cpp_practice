@@ -1,0 +1,19 @@
+Welcome to your second C++ lab!
+In this program, let us determine whether an input integer is a perfect square.
+If the input is negative, it is invalid.
+If the input is non-negative, it may or may not be a perfect square.
+If the input is a perfect square, let's find its non-negative integer square root and exit the program.
+
+Please enter an integer number: 500
+The input number is not a perfect square.
+
+Please enter an integer number: 123
+The input number is not a perfect square.
+
+Please enter an integer number: -8
+The input number is invalid.
+
+Please enter an integer number: 1024
+The input number is a perfect square. Its non-negative integer square root is 32.
+The program ends.
+
