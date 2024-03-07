@@ -4,6 +4,7 @@ using namespace std;
 int main()	
 {
     char s1[6] = {'h', 'k','u','s','t', 'z'}; 
+    cout << s1;
     
     // At this point, s1 is still a simple char array
     for (int j = 0; j < 5; j++)
