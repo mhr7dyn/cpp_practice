@@ -1,0 +1,9 @@
+Testing mode activated. The secret number is 6251.
+Welcome to Bulls and Cows Game!
+Try to guess a secret 4-digit number with no duplicates.
+For each guess, you will know the number of bulls and cows:
+- Bulls refer to number of digits that are at the correct position;
+- Cows refer to number of digits that are in the secret number, but not in the correct position.
+For example, if the secret number is 6251, a guess of 1236 results in 1B2C.
+
+Make your guess (type 0 or a negative integer to exit): 

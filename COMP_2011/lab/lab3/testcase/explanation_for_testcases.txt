@@ -1,0 +1,235 @@
+
+1. 
+
+- test1.txt
+
+1234
+1
+0
+1
+
+- output1.txt
+
+Enter the password to access the enrollment system: 
+Course Enrollment Menu:
+1 - COMP1001
+2 - COMP2002
+3 - COMP3003
+Select a course to enroll in (1-3): 
+Have you completed all prerequisite courses? (1 for yes, 0 for no): 
+Do you have any schedule conflict with the selected course? (1 for yes, 0 for no): 
+You have not completed all the prerequisites.
+You fail to enroll the course.
+
+- explanation
+
+Entered password '1234' is correct.
+
+Select a course to enroll in (1-3): 1 (class#1 is not full)
+
+Have you completed all prerequisite courses? (1 for yes, 0 for no): 0 
+--> have not completed all prerequisite courses.
+
+Do you have any schedule conflict with the selected course? (1 for yes, 0 for no): 1
+--> have time conflict.
+
+Checking in the order: prerequisites first, then schedule conflict, and finally course capacity,
+Outputs:
+You have not completed all the prerequisites.
+You fail to enroll the course.
+
+================================================
+
+2. 
+
+- test2.txt
+
+1234
+2
+1000
+0
+
+- output2.txt
+
+Enter the password to access the enrollment system: 
+Course Enrollment Menu:
+1 - COMP1001
+2 - COMP2002
+3 - COMP3003
+Select a course to enroll in (1-3): 
+Have you completed all prerequisite courses? (1 for yes, 0 for no): 
+Invalid input. Defaulting to YES.
+Do you have any schedule conflict with the selected course? (1 for yes, 0 for no): 
+The course is full.
+You fail to enroll the course.
+
+
+- explanation
+
+Entered password '1234' is correct.
+
+Select a course to enroll in (1-3): 2 (class#2 is full)
+
+Have you completed all prerequisite courses? (1 for yes, 0 for no): 1000
+--> outputs "Invalid input. Defaulting to YES." and returns true -->  
+have completed all prerequisite courses.
+
+Do you have any schedule conflict with the selected course? (1 for yes, 0 for no): 0
+--> do not have time conflict.
+
+Checking in the order: prerequisites first, then schedule conflict, and finally course capacity,
+Outputs:
+The course is full.
+You fail to enroll the course.
+
+================================================
+
+3. 
+
+- test3.txt
+
+0345670
+1
+1000
+1
+
+- output3.txt
+
+Enter the password to access the enrollment system: 
+Incorrect password. Access denied.
+
+- explanation
+
+Entered password '0345670' is incorrect.
+
+================================================
+
+4. 
+
+- test4.txt
+
+1234
+0
+1000
+1
+
+- output4.txt
+
+Enter the password to access the enrollment system: 
+Course Enrollment Menu:
+1 - COMP1001
+2 - COMP2002
+3 - COMP3003
+Select a course to enroll in (1-3): 
+Have you completed all prerequisite courses? (1 for yes, 0 for no): 
+Invalid input. Defaulting to YES.
+Do you have any schedule conflict with the selected course? (1 for yes, 0 for no): 
+Invalid course selection.
+
+- explanation
+
+Entered password '1234' is correct.
+
+Select a course to enroll in (1-3): 0 (0 is not an valid class number)
+
+Have you completed all prerequisite courses? (1 for yes, 0 for no): 1000
+--> outputs "Invalid input. Defaulting to YES." and returns true -->  
+have completed all prerequisite courses.
+
+Do you have any schedule conflict with the selected course? (1 for yes, 0 for no): 1
+--> have time conflict.
+
+Since 0 is an invalid class number,
+Outputs:
+Invalid course selection.
+and do not call the enrollInCourse() function.
+
+================================================
+
+5.
+
+- test5.txt
+
+1234
+1
+1
+1
+
+- output5.txt
+
+Enter the password to access the enrollment system: 
+Course Enrollment Menu:
+1 - COMP1001
+2 - COMP2002
+3 - COMP3003
+Select a course to enroll in (1-3): 
+Have you completed all prerequisite courses? (1 for yes, 0 for no): 
+Do you have any schedule conflict with the selected course? (1 for yes, 0 for no): 
+You have a schedule conflict.
+You fail to enroll the course.
+
+- explanation
+
+Entered password '1234' is correct.
+
+Select a course to enroll in (1-3): 1 (class#1 is not full)
+
+Have you completed all prerequisite courses? (1 for yes, 0 for no): 1
+--> have completed all prerequisite courses.
+
+Do you have any schedule conflict with the selected course? (1 for yes, 0 for no): 1
+--> have time conflict.
+
+Checking in the order: prerequisites first, then schedule conflict, and finally course capacity,
+Outputs:
+You have a schedule conflict.
+You fail to enroll the course.
+
+================================================
+
+6. 
+
+- test6.txt
+
+1234
+1
+1
+0
+
+
+- output6.txt
+
+Enter the password to access the enrollment system: 
+Course Enrollment Menu:
+1 - COMP1001
+2 - COMP2002
+3 - COMP3003
+Select a course to enroll in (1-3): 
+Have you completed all prerequisite courses? (1 for yes, 0 for no): 
+Do you have any schedule conflict with the selected course? (1 for yes, 0 for no): 
+You have been successfully enrolled in the course.
+Updated enrollment is: 21
+
+- explanation
+
+Entered password '1234' is correct.
+
+Select a course to enroll in (1-3): 1 (class#1 is not full)
+
+Have you completed all prerequisite courses? (1 for yes, 0 for no): 1
+--> have completed all prerequisite courses.
+
+Do you have any schedule conflict with the selected course? (1 for yes, 0 for no): 0
+--> do not have time conflict.
+
+Checking in the order: prerequisites first, then schedule conflict, and finally course capacity,
+the student pass all prerequisites, does not have time conflict and the selected class#1 is not full, 
+So outputs:
+You have been successfully enrolled in the course.
+Updated enrollment is: 21
+
+Noted that the current enrollment number should be added one.
+
+
+
+
