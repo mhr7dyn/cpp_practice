@@ -34,8 +34,11 @@ bool checkPassword(int password) {
     const int CORRECT_PASSWORD = 1234;
     //-------------------------------------------------------
     // ** Your TODO here #1 **
-   
 
+    if (password == CORRECT_PASSWORD)
+        return true;
+    else 
+        return false;
 
     //-------------------------------------------------------
 }
@@ -73,7 +76,15 @@ bool yesOrNo(int response)
 {
     //-------------------------------------------------------
     // ** Your TODO here #2 **
-    
+    if (response == 0)
+        return false;
+    else if (response == 1)
+        return true;
+    else {
+        cout << "Invalid input. Defaulting to YES." << endl;
+        return true;
+    }
+
 
 
 
@@ -123,11 +134,25 @@ void enrollInCourse(bool prereqsPassed, bool HasScheduleConflict, int &currentEn
 {
     //-------------------------------------------------------
     // ** Your TODO here #3 **
-    
 
+    if (!prereqsPassed){
+        cout << "You have not completed all the prerequisites." << endl;
+        cout << "You fail to enroll the course." << endl;}
 
+    else
+    {   if (HasScheduleConflict){
+            cout << "You have a schedule conflict." << endl;
+            cout << "You fail to enroll the course." << endl;}
 
+        else
+        {   if (currentEnrollment == capacity){
+                cout << "The course is full." << endl;
+                cout << "You fail to enroll the course." << endl;}
 
+            else
+            {   currentEnrollment += 1;
+                cout << "You have been successfully enrolled in the course." << endl;
+                cout << "Updated enrollment is: " << currentEnrollment << endl;}}}
     //-------------------------------------------------------
 }
 
@@ -176,7 +201,19 @@ int main() {
     // - If courseSelection is not 1, 2, or 3, output "Invalid course selection." and do not call the enrollInCourse function.
     //-------------------------------------------------------
     // ** Your TODO here #4 **
-    
+
+    if (courseSelection == 1){
+        enrollInCourse(prereqsPassed, HasScheduleConflict, currentEnrollmentCourse1, CAPACITY_COURSE_1);
+    }
+    else if (courseSelection == 2){
+        enrollInCourse(prereqsPassed, HasScheduleConflict, currentEnrollmentCourse2, CAPACITY_COURSE_2);
+    }
+    else if (courseSelection == 3){
+        enrollInCourse(prereqsPassed, HasScheduleConflict, currentEnrollmentCourse3, CAPACITY_COURSE_3);
+    }
+
+    else
+        cout << "Invalid course selection." << endl;
 
 
 
@@ -185,7 +222,3 @@ int main() {
 
     return 0;
 }
-
-
-
-
