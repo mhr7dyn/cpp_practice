@@ -18,6 +18,7 @@
 //
 // =====================================
 
+
 /**
  * Task1
  *
@@ -32,6 +33,19 @@
  */
 int countNumDigits(int number)
 {
+    
+    int numDigits = 0;
+    while (number != 0)
+    {
+        if (number == 0) return -1;
+        number /= 10;
+        numDigits++;
+    }
+
+    return numDigits;
+
+    
+
 
 }
 
@@ -51,6 +65,15 @@ int countNumDigits(int number)
  */
 bool checkContainDigitZero(int number)
 {
+    if (number < 0) return false;
+
+    while (number != 0)
+    {
+        if (number % 10 == 0) return true; 
+        number /= 10;
+
+    }
+    return false;
 
 }
 
@@ -70,6 +93,23 @@ bool checkContainDigitZero(int number)
  */
 bool checkDuplicateDigit(int number)
 {
+    int integers[9] = {0,0,0,0,0,0,0,0,0};
+
+    int currentDigit;
+
+    while (number != 0)
+    {
+        currentDigit = number % 10;
+        if (integers[currentDigit-1] == 0) integers[currentDigit-1] = currentDigit;
+        
+        else  return true;
+
+        number /= 10;
+
+
+    }
+
+    return false;
 }
 
 /**
@@ -91,5 +131,43 @@ bool checkDuplicateDigit(int number)
  */
 void countBullsCows(int numDigits, int guess, int answer, int &bulls, int &cows)
 {
+
+    int guessDigits[numDigits];
+    int answerDigits[numDigits];
+
+    
+
+    for (int i=numDigits; i>0; i--)
+    {
+        int guessDigit = guess % 10;
+        int answerDigit = answer % 10;
+        
+        guessDigits[i-1] = guessDigit;
+        answerDigits[i-1] = answerDigit;
+        
+        guess /= 10;
+        answer /= 10;
+
+
+    }
+
+    bulls = 0;
+    cows = 0;
+
+
+    for (int i=0; i<numDigits; i++)
+    {
+        for (int j=0; j<numDigits; j++)
+        {
+            if (answerDigits[i] == guessDigits[j]){
+
+                if (i == j) bulls++;
+
+                else cows++;
+            }
+        }
+    }
+
 }
+
 
