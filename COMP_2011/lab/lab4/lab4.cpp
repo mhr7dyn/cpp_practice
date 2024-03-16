@@ -12,6 +12,10 @@ const int MAX_PATH_LENGTH = 100;
                 should be [2, 3, 5, 7, 2, 3, 5, 7] */
 void tear_cards(const int card[], int card_torn[], int org_size){
     /* your code */
+    for (int i=0; i<8; i++) {
+        if (i<4) card_torn[i] = card[i];
+        else card_torn[i] = card[i-4];
+    }
 }
 
 /* TODO TASK 3: Implement the rotate_cards function. 
@@ -21,6 +25,15 @@ void tear_cards(const int card[], int card_torn[], int org_size){
                 my_card for 3 times */
 void rotate_cards(int card[], int size, int times){
     /* your code */
+    int temp, first_card;
+    for (int i = 0; i < times; i++) {
+        first_card = card[0];
+        
+        for (int j = 0; j < size-1; j++) {
+            card[j] = card[j + 1];    
+        }
+        card[size - 1] = first_card;
+    }
 }
 
 /* TODO TASK 4: Implement the throw_cards function. 
@@ -28,6 +41,20 @@ void rotate_cards(int card[], int size, int times){
                 size is the number of cards after throwing, age is the age of the player. */
 void throw_cards(const int card[], int card_final[], int size, int age){
     /* your code */
+    
+    bool Even = (age % 2 == 0);
+
+    int removeIndex = Even ? 0 : 1;
+
+    int j = 0; // Index for the final array (card_final)
+    for (int i = 0; i <= size; i++) {
+        // Handle edge case: if i == removeIndex, skip copying
+        if (i == removeIndex) {
+        continue;
+        }
+        card_final[j++] = card[i]; // Copy element and increment j for the next position
+    }
+
 }
 
 /* OPTIONAL TODO: You can rewrite this rotate_remove function to enhance your understanding of 1D-array.
@@ -69,17 +96,33 @@ int main(){
     /* TODO TASK 1.1: You need to check if the file can be opened, if not, output the error message.*/
     /* your code */
     // Check if the file can be opened
-    
+    if (!fin) {
+        cout << "-1";
+        return 0;
+    }
+
 
     /* TODO TASK 1.2: Read and initialize the array representing card, player's year of study and age
                     You should be aware that the cards, year and age may appear in random order.
                     In the array, the 0th element represent the number on the top card, 
                     1st element is the number on the second top card, etc. */
     char type_of_information;
+    int counter = 0;
+    int cardCounter = 0;
+    int ageCounter = 0;
+    char temp;
     while( fin >> type_of_information ) {
         /* your code */
-    }
 
+        if (type_of_information == 'c')
+        {
+            for (int i = 0; i <= 3; i++) fin >> card[i];
+        }
+        else if (type_of_information == 'a') fin >> age;
+
+        else fin >> year;
+    } 
+    
     fin.close();
 
     // --------------!! WARNING: DO NOT EDIT THE CODE BELOW !!--------------
